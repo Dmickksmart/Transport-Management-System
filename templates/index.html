@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMS - Transportation Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📋 TMS - Transportation Management</h1>
+            <nav class="nav-tabs">
+                <button class="nav-btn active" data-tab="buses">Buses</button>
+                <button class="nav-btn" data-tab="drivers">Drivers</button>
+                <button class="nav-btn" data-tab="passengers">Passengers</button>
+                <button class="nav-btn" data-tab="tickets">Tickets</button>
+            </nav>
+        </header>
+
+        <!-- Buses Section -->
+        <section id="buses" class="tab-content active">
+            <h2>Bus Management</h2>
+            <form id="bus-form" class="form-container">
+                <div class="form-row">
+                    <input type="text" id="bus-plate" placeholder="Plate Number" required>
+                    <input type="text" id="bus-brand" placeholder="Brand" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" id="bus-model" placeholder="Model" required>
+                    <input type="text" id="bus-color" placeholder="Color" required>
+                </div>
+                <div class="form-row">
+                    <input type="number" id="bus-year" placeholder="Year" required>
+                    <button type="submit" class="btn-primary">Add Bus</button>
+                </div>
+            </form>
+            <div id="buses-list" class="list-container"></div>
+        </section>
+
+        <!-- Drivers Section -->
+        <section id="drivers" class="tab-content">
+            <h2>Driver Management</h2>
+            <form id="driver-form" class="form-container">
+                <div class="form-row">
+                    <input type="text" id="driver-nin" placeholder="NIN" required>
+                    <input type="text" id="driver-first-name" placeholder="First Name" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" id="driver-last-name" placeholder="Last Name" required>
+                    <input type="text" id="driver-license" placeholder="Driver License" required>
+                </div>
+                <div class="form-row">
+                    <input type="number" id="driver-age" placeholder="Age" required>
+                    <select id="driver-gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Add Driver</button>
+            </form>
+            <div id="drivers-list" class="list-container"></div>
+        </section>
+
+        <!-- Passengers Section -->
+        <section id="passengers" class="tab-content">
+            <h2>Passenger Management</h2>
+            <form id="passenger-form" class="form-container">
+                <div class="form-row">
+                    <input type="text" id="passenger-first-name" placeholder="First Name" required>
+                    <input type="text" id="passenger-last-name" placeholder="Last Name" required>
+                </div>
+                <div class="form-row">
+                    <input type="number" id="passenger-age" placeholder="Age" required>
+                    <select id="passenger-gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <input type="number" id="passenger-luggage" placeholder="Luggage Weight (kg)" required>
+                    <button type="submit" class="btn-primary">Add Passenger</button>
+                </div>
+            </form>
+            <div id="passengers-list" class="list-container"></div>
+        </section>
+
+        <!-- Tickets Section -->
+        <section id="tickets" class="tab-content">
+            <h2>Ticket Management</h2>
+            <form id="ticket-form" class="form-container">
+                <div class="form-row">
+                    <input type="text" id="ticket-departure" placeholder="Departure Terminal" required>
+                    <input type="text" id="ticket-arrival" placeholder="Arrival Terminal" required>
+                </div>
+                <div class="form-row">
+                    <input type="number" id="ticket-age" placeholder="Age" required>
+                    <button type="submit" class="btn-primary">Add Ticket</button>
+                </div>
+            </form>
+            <div id="tickets-list" class="list-container"></div>
+        </section>
+    </div>
+
+    <!-- Message Toast -->
+    <div id="message-toast" class="message-toast"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
